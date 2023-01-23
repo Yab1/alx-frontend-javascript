@@ -1,0 +1,27 @@
+{
+  "name": "0x00-es6_basic",
+  "version": "1.0.0",
+  "description": "## Author * **Yeabsera Lisanework** - [Yab1](https://github.com/Yab1) alx-frontend-javascript",
+  "main": "0-constants.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yab1/alx-frontend-javascript.git"
+  },
+  "author": "Yeabsera Lisanework (https://github.com/Yab1)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yab1/alx-frontend-javascript/issues"
+  },
+  "homepage": "https://github.com/Yab1/alx-frontend-javascript#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "babel-jest": "^29.3.1",
+    "eslint": "^8.32.0",
+    "jest": "^29.3.1"
+  }
+}
