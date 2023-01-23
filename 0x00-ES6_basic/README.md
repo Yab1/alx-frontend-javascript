@@ -571,4 +571,4 @@ Copyright © 2023 ALX, All rights reserved.
 
 ## Author
 
-- **Yeabsera Lisanework** - [Yab1](https://github.com/Yab1) alx-frontend-javascript
+- **Yeabsera Lisanework** - [Yab1](https://github.com/Yab1)
