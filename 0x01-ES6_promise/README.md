@@ -296,3 +296,6 @@ Repo:
 GitHub repository: alx-frontend-javascript
 Directory: 0x01-ES6_promise
 File: 9-try.js
+
+## Author
+* **Yeabsera Lisanework** - [Yab1](https://github.com/Yab1)
