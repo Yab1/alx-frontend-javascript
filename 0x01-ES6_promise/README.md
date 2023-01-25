@@ -1,7 +1,9 @@
 # 0x01-ES6_promise
 
 ## Tasks
+
 ### 0. Keep every promise you make and only make promises you can keep
+
 mandatory
 Return a Promise using this prototype function getResponseFromAPI()
 
@@ -11,17 +13,18 @@ import getResponseFromAPI from "./0-promise.js";
 const response = getResponseFromAPI();
 console.log(response instanceof Promise);
 
-bob@dylan:~$ 
-bob@dylan:~$ npm run dev 0-main.js 
+bob@dylan:~$
+bob@dylan:~$ npm run dev 0-main.js
 true
-bob@dylan:~$ 
+bob@dylan:~$
 Repo:
 
 GitHub repository: alx-frontend-javascript
 Directory: 0x01-ES6_promise
 File: 0-promise.js
-   
+
 ### 1. Don't make a promise...if you know you can't keep it
+
 mandatory
 Using the prototype below, return a promise. The parameter is a boolean.
 
@@ -42,21 +45,22 @@ import getFullResponseFromAPI from './1-promise';
 console.log(getFullResponseFromAPI(true));
 console.log(getFullResponseFromAPI(false));
 
-bob@dylan:~$ 
-bob@dylan:~$ npm run dev 1-main.js 
+bob@dylan:~$
+bob@dylan:~$ npm run dev 1-main.js
 Promise { { status: 200, body: 'Success' } }
 Promise {
-  <rejected> Error: The fake API is not working currently
-    ...
-    ...
-bob@dylan:~$ 
+<rejected> Error: The fake API is not working currently
+...
+...
+bob@dylan:~$
 Repo:
 
 GitHub repository: alx-frontend-javascript
 Directory: 0x01-ES6_promise
 File: 1-promise.js
-   
+
 ### 2. Catch me if you can!
+
 mandatory
 Using the function prototype below
 
@@ -74,17 +78,18 @@ import handleResponseFromAPI from "./2-then";
 const promise = Promise.resolve();
 handleResponseFromAPI(promise);
 
-bob@dylan:~$ 
-bob@dylan:~$ npm run dev 2-main.js 
+bob@dylan:~$
+bob@dylan:~$ npm run dev 2-main.js
 Got a response from the API
-bob@dylan:~$ 
+bob@dylan:~$
 Repo:
 
 GitHub repository: alx-frontend-javascript
 Directory: 0x01-ES6_promise
 File: 2-then.js
-   
+
 ### 3. Handle multiple successful promises
+
 mandatory
 In this file, import uploadPhoto and createUser from utils.js
 
@@ -98,17 +103,18 @@ import handleProfileSignup from "./3-all";
 
 handleProfileSignup();
 
-bob@dylan:~$ 
-bob@dylan:~$ npm run dev 3-main.js 
+bob@dylan:~$
+bob@dylan:~$ npm run dev 3-main.js
 photo-profile-1 Guillaume Salva
-bob@dylan:~$ 
+bob@dylan:~$
 Repo:
 
 GitHub repository: alx-frontend-javascript
 Directory: 0x01-ES6_promise
 File: 3-all.js
-   
+
 ### 4. Simple promise
+
 mandatory
 Using the following prototype
 
@@ -117,25 +123,26 @@ function signUpUser(firstName, lastName) {
 That returns a resolved promise with this object:
 
 {
-  firstName: value,
-  lastName: value,
+firstName: value,
+lastName: value,
 }
 bob@dylan:~$ cat 4-main.js
 import signUpUser from "./4-user-promise";
 
 console.log(signUpUser("Bob", "Dylan"));
 
-bob@dylan:~$ 
-bob@dylan:~$ npm run dev 4-main.js 
+bob@dylan:~$
+bob@dylan:~$ npm run dev 4-main.js
 Promise { { firstName: 'Bob', lastName: 'Dylan' } }
-bob@dylan:~$ 
+bob@dylan:~$
 Repo:
 
 GitHub repository: alx-frontend-javascript
 Directory: 0x01-ES6_promise
 File: 4-user-promise.js
-   
+
 ### 5. Reject the promises
+
 mandatory
 Write and export a function named uploadPhoto. It should accept one argument fileName (string).
 
@@ -149,48 +156,50 @@ import uploadPhoto from './5-photo-reject';
 
 console.log(uploadPhoto('guillaume.jpg'));
 
-bob@dylan:~$ 
-bob@dylan:~$ npm run dev 5-main.js 
+bob@dylan:~$
+bob@dylan:~$ npm run dev 5-main.js
 Promise {
-  <rejected> Error: guillaume.jpg cannot be processed
-  ..
-    ..
-bob@dylan:~$ 
+<rejected> Error: guillaume.jpg cannot be processed
+..
+..
+bob@dylan:~$
 Repo:
 
 GitHub repository: alx-frontend-javascript
 Directory: 0x01-ES6_promise
 File: 5-photo-reject.js
-   
+
 ### 6. Handle multiple promises
+
 mandatory
 Import signUpUser from 4-user-promise.js and uploadPhoto from 5-photo-reject.js.
 
 Write and export a function named handleProfileSignup. It should accept three arguments firstName (string), lastName (string), and fileName (string). The function should call the two other functions. When the promises are all settled it should return an array with the following structure:
 
 [
-    {
-      status: status_of_the_promise,
-      value: value or error returned by the Promise
-    },
-    ...
-  ]
+{
+status: status_of_the_promise,
+value: value or error returned by the Promise
+},
+...
+]
 bob@dylan:~$ cat 6-main.js
 import handleProfileSignup from './6-final-user';
 
 console.log(handleProfileSignup("Bob", "Dylan", "bob_dylan.jpg"));
 
-bob@dylan:~$ 
-bob@dylan:~$ npm run dev 6-main.js 
+bob@dylan:~$
+bob@dylan:~$ npm run dev 6-main.js
 Promise { <pending> }
-bob@dylan:~$ 
+bob@dylan:~$
 Repo:
 
 GitHub repository: alx-frontend-javascript
 Directory: 0x01-ES6_promise
 File: 6-final-user.js
-   
+
 ### 7. Load balancer
+
 mandatory
 Write and export a function named loadBalancer. It should accept two arguments chinaDownload (Promise) and USDownload (Promise).
 
@@ -206,36 +215,37 @@ const ukSuccess = 'Downloading from UK is faster';
 const frSuccess = 'Downloading from FR is faster';
 
 const promiseUK = new Promise(function(resolve, reject) {
-    setTimeout(resolve, 100, ukSuccess);
+setTimeout(resolve, 100, ukSuccess);
 });
 
 const promiseUKSlow = new Promise(function(resolve, reject) {
-    setTimeout(resolve, 400, ukSuccess);
+setTimeout(resolve, 400, ukSuccess);
 });
 
 const promiseFR = new Promise(function(resolve, reject) {
-    setTimeout(resolve, 200, frSuccess);
+setTimeout(resolve, 200, frSuccess);
 });
 
 const test = async () => {
-    console.log(await loadBalancer(promiseUK, promiseFR));
-    console.log(await loadBalancer(promiseUKSlow, promiseFR));
+console.log(await loadBalancer(promiseUK, promiseFR));
+console.log(await loadBalancer(promiseUKSlow, promiseFR));
 }
 
 test();
 
-bob@dylan:~$ 
-bob@dylan:~$ npm run dev 7-main.js 
+bob@dylan:~$
+bob@dylan:~$ npm run dev 7-main.js
 Downloading from UK is faster
 Downloading from FR is faster
-bob@dylan:~$ 
+bob@dylan:~$
 Repo:
 
 GitHub repository: alx-frontend-javascript
 Directory: 0x01-ES6_promise
 File: 7-load_balancer.js
-   
+
 ### 8. Throw error / try catch
+
 mandatory
 Write a function named divideFunction that will accept two arguments: numerator (Number) and denominator (Number).
 
@@ -250,22 +260,23 @@ import divideFunction from './8-try';
 console.log(divideFunction(10, 2));
 console.log(divideFunction(10, 0));
 
-bob@dylan:~$ 
-bob@dylan:~$ npm run dev 8-main.js 
+bob@dylan:~$
+bob@dylan:~$ npm run dev 8-main.js
 5
 ..../8-try.js:15
-  throw Error('cannot divide by 0');
-  ^
+throw Error('cannot divide by 0');
+^
 .....
 
-bob@dylan:~$ 
+bob@dylan:~$
 Repo:
 
 GitHub repository: alx-frontend-javascript
 Directory: 0x01-ES6_promise
 File: 8-try.js
-   
+
 ### 9. Throw an error
+
 mandatory
 Write a function named guardrail that will accept one argument mathFunction (Function).
 
@@ -276,8 +287,8 @@ When the mathFunction function is executed, the value returned by the function s
 Example:
 
 [
-  1000,
-  'Guardrail was processed',
+1000,
+'Guardrail was processed',
 ]
 bob@dylan:~$ cat 9-main.js
 import guardrail from './9-try';
@@ -286,16 +297,57 @@ import divideFunction from './8-try';
 console.log(guardrail(() => { return divideFunction(10, 2)}));
 console.log(guardrail(() => { return divideFunction(10, 0)}));
 
-bob@dylan:~$ 
-bob@dylan:~$ npm run dev 9-main.js 
+bob@dylan:~$
+bob@dylan:~$ npm run dev 9-main.js
 [ 5, 'Guardrail was processed' ]
 [ 'Error: cannot divide by 0', 'Guardrail was processed' ]
-bob@dylan:~$ 
+bob@dylan:~$
 Repo:
 
 GitHub repository: alx-frontend-javascript
 Directory: 0x01-ES6_promise
 File: 9-try.js
 
+### 10. Await / Async
+
+#advanced
+Import uploadPhoto and createUser from utils.js
+
+Write an async function named asyncUploadUser that will call these two functions and return an object with the following format:
+
+{
+photo: response_from_uploadPhoto_function,
+user: response_from_createUser_function,
+}
+If one of the async function fails, return an empty object. Example:
+
+{
+photo: null,
+user: null,
+}
+bob@dylan:~$ cat 100-main.js
+import asyncUploadUser from "./100-await";
+
+const test = async () => {
+const value = await asyncUploadUser();
+console.log(value);
+};
+
+test();
+
+bob@dylan:~$
+bob@dylan:~$ npm run dev 100-main.js
+{
+photo: { status: 200, body: 'photo-profile-1' },
+user: { firstName: 'Guillaume', lastName: 'Salva' }
+}
+bob@dylan:~$
+Repo:
+
+GitHub repository: alx-frontend-javascript
+Directory: 0x01-ES6_promise
+File: 100-await.js
+
 ## Author
-* **Yeabsera Lisanework** - [Yab1](https://github.com/Yab1)
+
+- **Yeabsera Lisanework** - [Yab1](https://github.com/Yab1)
